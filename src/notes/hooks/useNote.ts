@@ -16,7 +16,7 @@ const useNote = ({ note, editNote, removeNote }: NoteProps) => {
 
   useEffect(() => {
     if (location.hash === `#${note.id}`) {
-      noteInput.current?.scrollIntoView();
+      noteInput.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       noteInput.current?.focus();
     }
   }, []);

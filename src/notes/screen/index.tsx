@@ -9,10 +9,10 @@ const NotesScreen = () => {
   } = useNotes();
 
   return (
-    <div className="w-100 h-100 overflow-hidden d-flex flex-column gap-4">
+    <div className="w-100 h-100 d-flex flex-column gap-4 p-1">
       <NoteForm addNote={addNote} />
 
-      <div className="d-flex flex-column gap-2 overflow-auto">
+      <div className="d-flex flex-column gap-2 p-1 overflow-auto">
         {
           notes.map((note) => (
             <NoteItem key={note.id} editNote={editNote} note={note} removeNote={removeNote} />

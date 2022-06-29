@@ -1,5 +1,6 @@
 import { Card } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
 
 import useRecentNotes from '../hooks/useRecentNotes';
 
@@ -13,9 +14,9 @@ const RecentNotes = () => {
 
         <div className="d-flex flex-column gap-2">
           {
-            recentNotes.map((note) => (
+            recentNotes.length ? recentNotes.map((note) => (
               <LinkContainer to={`/notes#${note.id}`} key={note.id}>
-                <Card className="w-full cursor-pointer">
+                <Card className="w-full" role="button">
                   <Card.Header className="px-1 py-0">
                     <span className="text-muted small">{note.date}</span>
                   </Card.Header>
@@ -25,7 +26,11 @@ const RecentNotes = () => {
                   </Card.Body>
                 </Card>
               </LinkContainer>
-            ))
+            )) : (
+              <Link to="/notes">
+                + Add some notes
+              </Link>
+            )
           }
         </div>
       </Card.Body>

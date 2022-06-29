@@ -31,7 +31,7 @@ const RegisterScreen = () => {
           Register
         </Button>
 
-        <LinkContainer to="/login">
+        <LinkContainer to="/user/login">
           <Button type="button" variant="link">
             Have account? Login
           </Button>

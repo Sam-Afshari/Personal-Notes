@@ -1,16 +1,11 @@
-import { FC, ReactElement } from 'react';
+import { FC, lazy, ReactElement } from 'react';
 import {
   BrowserRouter, Routes, Route, Navigate, Outlet,
 } from 'react-router-dom';
 
 import DrawerLayout from '../layouts/DrawerLayout';
 
-import NotesScreen from '../notes/screen';
-import ProfileScreen from '../profile/screen';
 import useCurrentUser from '../user/hooks/useCurrentUser';
-import LoginScreen from '../user/screen/LoginScreen';
-import RegisterScreen from '../user/screen/RegisterScreen';
-import HomeScreen from '../home/screen';
 
 const ProtectedRoute: FC<{children: ReactElement}> = ({ children }) => {
   const currentUser = useCurrentUser();
@@ -22,12 +17,22 @@ const ProtectedRoute: FC<{children: ReactElement}> = ({ children }) => {
   return <Navigate to="/login" replace />;
 };
 
+const LoginScreen = lazy(() => import('../user/screen/LoginScreen'));
+const NotesScreen = lazy(() => import('../notes/screen'));
+const ProfileScreen = lazy(() => import('../profile/screen'));
+const RegisterScreen = lazy(() => import('../user/screen/RegisterScreen'));
+const HomeScreen = lazy(() => import('../home/screen'));
+
 const Router = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="login" element={<LoginScreen />} />
+      <Route path="user">
+        <Route path="login" element={<LoginScreen />} />
 
-      <Route path="register" element={<RegisterScreen />} />
+        <Route path="register" element={<RegisterScreen />} />
+
+        <Route index element={<Navigate to="login" />} />
+      </Route>
 
       <Route
         path="/"
@@ -45,7 +50,7 @@ const Router = () => (
         <Route index element={<Navigate to="home" />} />
       </Route>
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<Navigate to="/user" replace />} />
     </Routes>
   </BrowserRouter>
 );

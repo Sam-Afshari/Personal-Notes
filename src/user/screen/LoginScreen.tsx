@@ -24,7 +24,7 @@ const LoginScreen = () => {
           Login
         </Button>
 
-        <LinkContainer to="/register">
+        <LinkContainer to="/user/register">
           <Button type="button" variant="link">
             Need account? Register
           </Button>
