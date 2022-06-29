@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import RecentNotes from '../components/RecentNotes';
 import Todos from '../components/Todos';
 

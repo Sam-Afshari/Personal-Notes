@@ -3,10 +3,10 @@ import {
 } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import useCurrentUser from '../user/hooks/useCurrentUser';
+import useCurrentUser from '../features/user/hooks/useCurrentUser';
 import useAppDispatch from './useAppDispatch';
 
-import { logout } from '../user/store';
+import { logout } from '../features/user/store';
 
 const useDrawer = () => {
   const [show, showDrawer] = useState(false);

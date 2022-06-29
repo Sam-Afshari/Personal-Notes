@@ -5,10 +5,10 @@ import {
 
 import storage from 'redux-persist/lib/storage';
 
-import userReducer from '../user/store';
-import noteReducer from '../notes/store';
+import userReducer from '../features/user/store';
+import noteReducer from '../features/notes/store';
 import toastReducer from './toastSlice';
-import todoReducer from '../home/store';
+import todoReducer from '../features/home/store';
 
 const rootReducer = combineReducers({
   user: userReducer,

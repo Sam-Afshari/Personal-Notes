@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import { v4 as uuidV4 } from 'uuid';
 
-import useAppDispatch from '../../hooks/useAppDispatch';
-import useAppSelector from '../../hooks/useAppSelector';
+import useAppDispatch from '../../../hooks/useAppDispatch';
+import useAppSelector from '../../../hooks/useAppSelector';
 
 import {
   deleteNote, saveNote, selectNotes, updateNote,

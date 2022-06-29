@@ -1,5 +1,6 @@
 import { Form, Button } from 'react-bootstrap';
-import CardedLayout from '../../layouts/CardedLayout';
+
+import CardedLayout from '../../../layouts/CardedLayout';
 
 import useChangeName from '../hooks/useChangeName';
 

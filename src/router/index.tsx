@@ -2,10 +2,9 @@ import { FC, lazy, ReactElement } from 'react';
 import {
   BrowserRouter, Routes, Route, Navigate, Outlet,
 } from 'react-router-dom';
+import useCurrentUser from '../features/user/hooks/useCurrentUser';
 
 import DrawerLayout from '../layouts/DrawerLayout';
-
-import useCurrentUser from '../user/hooks/useCurrentUser';
 
 const ProtectedRoute: FC<{children: ReactElement}> = ({ children }) => {
   const currentUser = useCurrentUser();
@@ -17,11 +16,11 @@ const ProtectedRoute: FC<{children: ReactElement}> = ({ children }) => {
   return <Navigate to="/login" replace />;
 };
 
-const LoginScreen = lazy(() => import('../user/screen/LoginScreen'));
-const NotesScreen = lazy(() => import('../notes/screen'));
-const ProfileScreen = lazy(() => import('../profile/screen'));
-const RegisterScreen = lazy(() => import('../user/screen/RegisterScreen'));
-const HomeScreen = lazy(() => import('../home/screen'));
+const LoginScreen = lazy(() => import('../features/user/screen/LoginScreen'));
+const NotesScreen = lazy(() => import('../features/notes/screen'));
+const ProfileScreen = lazy(() => import('../features/profile/screen'));
+const RegisterScreen = lazy(() => import('../features/user/screen/RegisterScreen'));
+const HomeScreen = lazy(() => import('../features/home/screen'));
 
 const Router = () => (
   <BrowserRouter>

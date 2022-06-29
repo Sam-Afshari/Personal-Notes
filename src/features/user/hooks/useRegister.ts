@@ -2,9 +2,10 @@ import {
   useRef, FormEventHandler, useCallback,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useAppDispatch from '../../hooks/useAppDispatch';
-import useAppSelector from '../../hooks/useAppSelector';
-import useToast from '../../hooks/useToast';
+
+import useAppDispatch from '../../../hooks/useAppDispatch';
+import useAppSelector from '../../../hooks/useAppSelector';
+import useToast from '../../../hooks/useToast';
 
 import { login, register, selectUsers } from '../store';
 

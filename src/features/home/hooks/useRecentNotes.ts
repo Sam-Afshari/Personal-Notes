@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
-import { useSelector } from 'react-redux';
+
+import useAppSelector from '../../../hooks/useAppSelector';
 
 import { selectNotes } from '../../notes/store';
 
 const useRecentNotes = () => {
-  const notes = useSelector(selectNotes);
+  const notes = useAppSelector(selectNotes);
 
   const recentNotes = useMemo(() => notes.slice(0, 3), [notes]);
 

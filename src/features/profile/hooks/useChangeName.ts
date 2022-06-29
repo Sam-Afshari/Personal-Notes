@@ -1,7 +1,7 @@
 import { FormEvent, useCallback, useRef } from 'react';
 
-import useAppDispatch from '../../hooks/useAppDispatch';
-import useToast from '../../hooks/useToast';
+import useAppDispatch from '../../../hooks/useAppDispatch';
+import useToast from '../../../hooks/useToast';
 
 import { changeFullName } from '../../user/store';
 

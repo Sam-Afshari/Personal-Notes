@@ -1,6 +1,7 @@
 import { Form, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-import CardedLayout from '../../layouts/CardedLayout';
+
+import CardedLayout from '../../../layouts/CardedLayout';
 
 import useRegister from '../hooks/useRegister';
 
